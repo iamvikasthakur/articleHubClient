@@ -47,7 +47,7 @@ const Main = () => {
   useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        // console.log(user);
+        console.log(user);
         setUser(user);
         localStorage.setItem("email", user.email);
         localStorage.setItem("accessToken", user.za);
@@ -101,7 +101,7 @@ const Main = () => {
     axios
       .post("/authenticate/update", { accessToken: accessToken, email: email })
       .then((res) => {
-        // console.log(res);
+        console.log(res);
       })
       .catch((err) => console.log(err));
   };
@@ -125,7 +125,7 @@ const Main = () => {
         .then((articles) => {
           setData(articles.data);
           setIsLoading(false);
-          // console.log(articles.data);
+          console.log(articles.data);
         })
         .catch((err) => console.log(err));
     }, []);
@@ -259,7 +259,7 @@ const Main = () => {
     const [alreadyDisliked, setAlreadyDisliked] = useState(false);
     const [isLoading1, setIsLoading1] = useState(true);
     const [isLoading2, setIsLoading2] = useState(true);
-    // console.log(topic, id, article);
+    console.log(topic, id, article);
 
     useEffect(() => {
       console.log("inside useeffect");
@@ -277,7 +277,7 @@ const Main = () => {
         .get(`/${topic}/${id}`, config)
         .then((response) => {
           setArticle(response.data);
-          // console.log(response.data);
+          console.log(response.data);
           setIsLoading1(false)
         })
         .catch((err) => console.log(err));
@@ -287,7 +287,7 @@ const Main = () => {
           .get(`user/${email}`, config)
           .then((response) => {
             if (response) {
-              // console.log(response);
+              console.log(response.data);
               setAlreadyLiked(response.data[0].likedArticleId.includes(id));
               setAlreadyDisliked(response.data[0].dislikedArticleId.includes(id));
               setIsLoading2(false);
