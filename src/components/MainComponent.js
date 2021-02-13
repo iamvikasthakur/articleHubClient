@@ -52,7 +52,7 @@ const Main = () => {
         localStorage.setItem("email", user.email);
         localStorage.setItem("accessToken", user.za);
         localStorage.setItem("name", user.displayName);
-        updateAuthenticate(accessToken, email);
+        updateAuthenticate(user.za, user.email);
       } else {
         setUser(false);
       }
