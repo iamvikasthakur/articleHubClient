@@ -21,7 +21,7 @@ const Cardd = ({ data, topic }) => {
       alert("Please Login to see the content ");
       return;
     }
-    history.push(`/${topic}/${article.heading}/${article._id}`);
+    history.push(`/${topic}/${article._id}`);
   };
 
   return (

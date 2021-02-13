@@ -30,7 +30,7 @@ const Article = ({
         dislike: dislike,
       })
       .then((response) => {
-        console.log(response);
+        // console.log(response);
       })
       .catch((err) => console.log(err));
 
@@ -38,7 +38,7 @@ const Article = ({
       axios
         .patch(`/user/${email}`, { id: article._id, disliked: disliked })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
         })
         .catch((err) => console.log(err));
     }
@@ -47,7 +47,7 @@ const Article = ({
       axios
         .patch(`/user/${email}`, { id: article._id, liked: liked })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
         })
         .catch((err) => console.log(err));
     }
@@ -68,7 +68,7 @@ const Article = ({
   };
 
   const handleLike = () => {
-    console.log("liked");
+    // console.log("liked");
     if (disliked) {
       return;
     }
