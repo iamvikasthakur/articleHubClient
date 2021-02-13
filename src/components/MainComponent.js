@@ -47,12 +47,12 @@ const Main = () => {
   useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        console.log(user);
+        // console.log(user);
         setUser(user);
         localStorage.setItem("email", user.email);
         localStorage.setItem("accessToken", user.za);
         localStorage.setItem("name", user.displayName);
-        updateAuthenticate(user.za, user.email);
+        updateAuthenticate(accessToken, email);
       } else {
         setUser(false);
       }
@@ -86,8 +86,8 @@ const Main = () => {
       accessToken: user.za,
       email: user.email,
     };
-    console.log(userData);
-    console.log(idToken);
+    // console.log(userData);
+    // console.log(idToken);
     axios
       .post("/authenticate", { idToken: idToken, userData: userData })
       .then((res) => {
@@ -97,11 +97,11 @@ const Main = () => {
   };
 
   const updateAuthenticate = (accessToken, email) => {
-    console.log(email);
+    // console.log(email);
     axios
       .post("/authenticate/update", { accessToken: accessToken, email: email })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err) => console.log(err));
   };
@@ -277,7 +277,7 @@ const Main = () => {
         .get(`/${topic}/${id}`, config)
         .then((response) => {
           setArticle(response.data);
-          console.log(response.data);
+          // console.log(response.data);
           setIsLoading1(false)
         })
         .catch((err) => console.log(err));
@@ -287,7 +287,7 @@ const Main = () => {
           .get(`user/${email}`, config)
           .then((response) => {
             if (response) {
-              console.log(response);
+              // console.log(response);
               setAlreadyLiked(response.data[0].likedArticleId.includes(id));
               setAlreadyDisliked(response.data[0].dislikedArticleId.includes(id));
               setIsLoading2(false);

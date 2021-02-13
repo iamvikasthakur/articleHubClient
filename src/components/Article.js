@@ -19,9 +19,9 @@ const Article = ({
   const [disliked, setDisliked] = useState(alreadyDisliked);
 
   useEffect(() => {
-    console.log("liked chnaged", like);
-    console.log("disliked", dislike);
-    console.log(alreadyLiked, alreadyDisliked);
+    // console.log("liked chnaged", like);
+    // console.log("disliked", dislike);
+    // console.log(alreadyLiked, alreadyDisliked);
 
     axios
       .patch(`/${topic}/${article._id}`, {
@@ -38,7 +38,7 @@ const Article = ({
       axios
         .patch(`/user/${email}`, { id: article._id, disliked: disliked })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
         })
         .catch((err) => console.log(err));
     }
@@ -47,14 +47,14 @@ const Article = ({
       axios
         .patch(`/user/${email}`, { id: article._id, liked: liked })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
         })
         .catch((err) => console.log(err));
     }
   }, [like, dislike]);
 
   const handleDislike = () => {
-    console.log("disliked");
+    // console.log("disliked");
     if (liked) {
       return;
     }
@@ -68,7 +68,7 @@ const Article = ({
   };
 
   const handleLike = () => {
-    console.log("liked");
+    // console.log("liked");
     if (disliked) {
       return;
     }
