@@ -18,7 +18,7 @@ const footer = () => {
             <NavLink href="https://github.com/iamvikasthakur/">GitHub</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="https://drive.google.com/file/d/1t825n13XiQGyZgjppEhRUaTP_zO99ZPQ/view?usp=sharing">
+            <NavLink href="https://drive.google.com/file/d/1l00xB9IcwYC9T4V5YeGhGakdqJEO9Xef/view?usp=sharing">
               Resume
             </NavLink>
           </NavItem>
